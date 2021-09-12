@@ -1,0 +1,26 @@
+--debug
+--sgen-conc
+/target-framework:Xamarin.iOS,Version=v1.0
+--http-message-handler=NSUrlSessionHandler
+"--cache=/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.5/mtouch-cache"
+"--root-assembly=/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/bin/iPhoneSimulator/Debug/Nawache.exe"
+--sdkroot=/Applications/Xcode.app/Contents/Developer
+--targetver=14.5
+"--sim=/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/bin/iPhoneSimulator/Debug/device-builds/iphone 12-14.5/Nawache.app"
+--executable=Nawache
+--nolink
+--sdk=14.5
+--aot-options=-O=-float32
+--abi=x86_64
+"--symbollist=/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.5/mtouch-symbols.list"
+--dsym=no
+--reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll
+--reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/OpenTK-1.0.dll
+--reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll
+--reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll
+--reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Drawing.Common.dll
+--reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Numerics.dll
+--reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Numerics.Vectors.dll
+--reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll
+--reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll
+--reference=/Users/wiktorkalaga/.nuget/packages/xamarin.essentials/1.7.0/lib/xamarinios10/Xamarin.Essentials.dll

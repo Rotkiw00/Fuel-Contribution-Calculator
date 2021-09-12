@@ -1,0 +1,15 @@
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/bin/iPhoneSimulator/Debug/Nawache.exe
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/bin/iPhoneSimulator/Debug/Nawache.pdb
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/bin/iPhoneSimulator/Debug/Xamarin.Essentials.dll
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/bin/iPhoneSimulator/Debug/Xamarin.Essentials.pdb
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/Nawache.csprojAssemblyReference.cache
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/Nawache.csproj.CoreCompileInputs.cache
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/Nawache.csproj.CopyComplete
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/Nawache.exe
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/Nawache.pdb
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.5/actool/_PartialAppManifest.items
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.5/actool/_BundleResourceWithLogicalName.items
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.5/ibtool/_BundleResourceWithLogicalName.items
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.5/coremlc/_PartialAppManifest.items
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.5/coremlc/_BundleResourceWithLogicalName.items
+/Users/wiktorkalaga/Documents/Projects VisualStudio/Xamarin.iOS_proj/Nawache/Nawache/obj/iPhoneSimulator/Debug/device-builds/iphone 12-14.5/optimized/

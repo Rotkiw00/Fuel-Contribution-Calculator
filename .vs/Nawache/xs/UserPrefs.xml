@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{9EB9F327-B63A-4631-AA92-3F3F0FD7B575}|Default">
+  <MonoDevelop.Ide.ItemProperties.Nawache automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D2FFBC3C-6C6A-4D20-96A7-3788AFD7DC90" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nawache/ViewController.cs">
+    <Files>
+      <File FileName="Nawache/ViewController.designer.cs" Line="33" Column="11" />
+      <File FileName="Nawache/ViewController.cs" Line="72" Column="58" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Nawache" expanded="True">
+            <Node name="Nawache" expanded="True">
+              <Node name="ViewController.cs" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
