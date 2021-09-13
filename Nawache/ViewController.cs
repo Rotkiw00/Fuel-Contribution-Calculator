@@ -54,23 +54,26 @@ namespace Nawache
 
         partial void generateResultButton(UIButton sender)
         {
-            // setting "zł" for printing cost values
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pl-PL");
 
-            // ------------------------------------------------ adding functionality for printing results          
-            if (peopleInputTextField.Text == "0" || peopleInputTextField.Text.StartsWith("0") || string.IsNullOrEmpty(peopleInputTextField.Text))
+            if (string.IsNullOrEmpty(peopleInputTextField.Text) || string.IsNullOrEmpty(distanceInputTextField.Text) || string.IsNullOrEmpty(milageInputTextField.Text))
             {
-                var alert = UIAlertController.Create("Wystąpił błąd!", "Liczba osób nie może wynosić 0 lub zaczynać się od 0.", UIAlertControllerStyle.Alert);
+                var alert = UIAlertController.Create("Wystąpił błąd!", "Dla poprawnego działania aplikacji zaleca się podanie wszystkich danych", UIAlertControllerStyle.Alert);
                 alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
                 PresentViewController(alert, true, null);
-                                
-            }            
-            else if (string.IsNullOrEmpty(distanceInputTextField.Text))
-            {
-                var alert = UIAlertController.Create("Wystąpił błąd!", "Przebyty dystans nie może być mniejszy od 1 km.", UIAlertControllerStyle.Alert);
-                alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-                PresentViewController(alert, true, null);                
             }
+            else if (peopleInputTextField.Text == "0" || peopleInputTextField.Text.StartsWith("0"))
+            {
+                var alert = UIAlertController.Create("Wystąpił błąd!", "Musi być przynajmniej 1 osoba w aucie", UIAlertControllerStyle.Alert);
+                alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                PresentViewController(alert, true, null);
+            }
+            //else if ()
+            //{
+            //    var alert = UIAlertController.Create("Wystąpił błąd!", "Dystans musi wynosić conajmniej 1 km", UIAlertControllerStyle.Alert);
+            //    alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+            //    PresentViewController(alert, true, null);
+            //}
             /*
              
             >>  << 
@@ -78,23 +81,41 @@ namespace Nawache
              */
             else // >> refactor <<
             {
+                string ppl = peopleInputTextField.Text;
                 string d = distanceInputTextField.Text.Replace('.', ',');
                 string m = milageInputTextField.Text.Replace('.', ',');
-                
-                double c = CalculateResults(d, m); // invoking method example
-                printResultLabel1.Text = c.ToString("C2");
-                costWithWeightLabel.Text = "kwota z obciążeniem";
-                printResultLabel2.Text = c.ToString("C2");
-                costWithoutWeightLabel.Text = "kwota bez obciążenia";
+                string fc = fuelCostInputTextField.Text.Replace('.', ',');
+                string avgw = weightPeopleInputTextField.Text.Replace('.', ',');
+
+                double fullCost = CalculateWholeCost(ppl, d, m, fc, avgw); // invoking method example
+                printResultLabel1.Text = fullCost.ToString("C2");
+                costWithWeightLabel.Text = "całkowity koszt podróży";
+
+                double sharedCost = ShareCostWith(fullCost, ppl);
+                printResultLabel2.Text = sharedCost.ToString("C2");
+                costWithoutWeightLabel.Text = "TWOJA ZRZUTKA";
             }
         }
 
-        private double CalculateResults(string _distance, string _milage) // example >> refactor it soon
+        private double CalculateWholeCost(string _people, string _distance, string _milage, string _fuelCost, string _avgWeight) // example >> refactor it soon
         {
-            var distance = double.Parse(_distance);
-            var milage = double.Parse(_milage);
-            var result = distance + milage;
-            return result;
+            int ppl = int.Parse(_people);
+            double d = double.Parse(_distance);
+            double m = double.Parse(_milage); // średnie spalanie paliwa
+            double fc = double.Parse(_fuelCost);
+            double avgw = double.Parse(_avgWeight);
+
+            double additionalMilage = (avgw * ppl * 0.6) / 100;
+            double csspzudc = m + additionalMilage;
+            double wholeTripCost = csspzudc * fc;
+
+            return wholeTripCost;
+        }
+
+        private double ShareCostWith(double whTripCost, string _people)
+        {
+            int ppl = int.Parse(_people);
+            return whTripCost / ppl;
         }
 
         public override void DidReceiveMemoryWarning() => base.DidReceiveMemoryWarning();

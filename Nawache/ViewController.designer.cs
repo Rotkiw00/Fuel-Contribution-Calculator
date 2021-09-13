@@ -13,18 +13,6 @@ namespace Nawache
 	partial class ViewController
 	{
 		[Outlet]
-		UIKit.UIButton addingCostValueBttn1 { get; set; }
-
-		[Outlet]
-		UIKit.UIButton addingCostValueBttn2 { get; set; }
-
-		[Outlet]
-		UIKit.UIButton addingCostValueBttn3 { get; set; }
-
-		[Outlet]
-		UIKit.UIButton addingCostValueBttn4 { get; set; }
-
-		[Outlet]
 		UIKit.UILabel appNameHeader { get; set; }
 
 		[Outlet]
@@ -147,26 +135,6 @@ namespace Nawache
 			if (weightPeopleInputTextField != null) {
 				weightPeopleInputTextField.Dispose ();
 				weightPeopleInputTextField = null;
-			}
-
-			if (addingCostValueBttn1 != null) {
-				addingCostValueBttn1.Dispose ();
-				addingCostValueBttn1 = null;
-			}
-
-			if (addingCostValueBttn2 != null) {
-				addingCostValueBttn2.Dispose ();
-				addingCostValueBttn2 = null;
-			}
-
-			if (addingCostValueBttn3 != null) {
-				addingCostValueBttn3.Dispose ();
-				addingCostValueBttn3 = null;
-			}
-
-			if (addingCostValueBttn4 != null) {
-				addingCostValueBttn4.Dispose ();
-				addingCostValueBttn4 = null;
 			}
 		}
 	}
