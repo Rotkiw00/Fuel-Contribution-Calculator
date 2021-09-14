@@ -112,11 +112,7 @@ namespace Nawache
             return wholeTripCost;
         }
 
-        private double ShareCostWith(double whTripCost, string _people)
-        {
-            int ppl = int.Parse(_people);
-            return whTripCost / ppl;
-        }
+        private double ShareCostWith(double whTripCost, string _people) => whTripCost / int.Parse(_people);
 
         public override void DidReceiveMemoryWarning() => base.DidReceiveMemoryWarning();
         // Release any cached data, images, etc that aren't in use.
