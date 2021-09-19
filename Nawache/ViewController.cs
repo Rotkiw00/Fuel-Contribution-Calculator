@@ -13,9 +13,34 @@ namespace Nawache
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();            
+            base.ViewDidLoad();
 
-            // adding cost value to specified text field after button click
+            try
+            {
+                peopleInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                peopleInputTextField.Layer.CornerRadius = 4;
+                peopleInputTextField.Layer.BorderWidth = 1f;
+
+                distanceInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                distanceInputTextField.Layer.CornerRadius = 4;
+                distanceInputTextField.Layer.BorderWidth = 1f;
+
+                milageInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                milageInputTextField.Layer.CornerRadius = 4;
+                milageInputTextField.Layer.BorderWidth = 1f;
+
+                fuelCostInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                fuelCostInputTextField.Layer.CornerRadius = 4;
+                fuelCostInputTextField.Layer.BorderWidth = 1f;
+
+                weightPeopleInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                weightPeopleInputTextField.Layer.CornerRadius = 4;
+                weightPeopleInputTextField.Layer.BorderWidth = 1f;
+            }
+            catch (Exception)
+            {
+            }
+
             peopleInfoButton.TouchUpInside += (sender, e) =>
             {
                 var alertController = UIAlertController.Create("Ile osób jechało ?", "Jako parametr należy wprowadzić liczbę osób znajdujących się w aucie w czasie przejazdu (tj. liczba osób przewożonych). Wartość domyślna to: 1 osoba.", UIAlertControllerStyle.Alert);
@@ -54,68 +79,174 @@ namespace Nawache
 
         partial void generateResultButton(UIButton sender)
         {
+            string people = peopleInputTextField.Text;
+            string distance = distanceInputTextField.Text.Replace('.', ',');
+            string milage100 = milageInputTextField.Text.Replace('.', ',');
+            string fuelCost = fuelCostInputTextField.Text.Replace('.', ',');
+            string avgW = weightPeopleInputTextField.Text.Replace('.', ',');
+
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pl-PL");
 
-            if (string.IsNullOrEmpty(peopleInputTextField.Text) || string.IsNullOrEmpty(distanceInputTextField.Text) || string.IsNullOrEmpty(milageInputTextField.Text))
+            if (string.IsNullOrEmpty(people) || string.IsNullOrEmpty(distance) || string.IsNullOrEmpty(milage100) || string.IsNullOrEmpty(fuelCost) || string.IsNullOrEmpty(avgW))
             {
                 var alert = UIAlertController.Create("Wystąpił błąd!", "Dla poprawnego działania aplikacji zaleca się podanie wszystkich danych", UIAlertControllerStyle.Alert);
                 alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
                 PresentViewController(alert, true, null);
+
+                if (string.IsNullOrEmpty(people))
+                {
+                    peopleInputTextField.Layer.BorderColor = UIColor.Red.CGColor;
+                    peopleInputTextField.Layer.CornerRadius = 4;
+                    peopleInputTextField.Layer.BorderWidth = 1f;
+                }
+                else
+                {
+
+                    peopleInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                    peopleInputTextField.Layer.CornerRadius = 4;
+                    peopleInputTextField.Layer.BorderWidth = 1f;
+                }
+
+                if (string.IsNullOrEmpty(distance))
+                {
+                    distanceInputTextField.Layer.BorderColor = UIColor.Red.CGColor;
+                    distanceInputTextField.Layer.CornerRadius = 4;
+                    distanceInputTextField.Layer.BorderWidth = 1f;
+                }
+                else
+                {
+
+                    distanceInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                    distanceInputTextField.Layer.CornerRadius = 4;
+                    distanceInputTextField.Layer.BorderWidth = 1f;
+                }
+
+                if (string.IsNullOrEmpty(milage100))
+                {
+                    milageInputTextField.Layer.BorderColor = UIColor.Red.CGColor;
+                    milageInputTextField.Layer.CornerRadius = 4;
+                    milageInputTextField.Layer.BorderWidth = 1f;
+                }
+                else
+                {
+
+                    milageInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                    milageInputTextField.Layer.CornerRadius = 4;
+                    milageInputTextField.Layer.BorderWidth = 1f;
+                }
+
+                if (string.IsNullOrEmpty(fuelCost))
+                {
+                    fuelCostInputTextField.Layer.BorderColor = UIColor.Red.CGColor;
+                    fuelCostInputTextField.Layer.CornerRadius = 4;
+                    fuelCostInputTextField.Layer.BorderWidth = 1f;
+                }
+                else
+                {
+
+                    fuelCostInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                    fuelCostInputTextField.Layer.CornerRadius = 4;
+                    fuelCostInputTextField.Layer.BorderWidth = 1f;
+                }
+
+                if (string.IsNullOrEmpty(avgW))
+                {
+                    weightPeopleInputTextField.Layer.BorderColor = UIColor.Red.CGColor;
+                    weightPeopleInputTextField.Layer.CornerRadius = 4;
+                    weightPeopleInputTextField.Layer.BorderWidth = 1f;
+                }
+                else
+                {
+
+                    weightPeopleInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                    weightPeopleInputTextField.Layer.CornerRadius = 4;
+                    weightPeopleInputTextField.Layer.BorderWidth = 1f;
+                }
             }
-            else if (peopleInputTextField.Text == "0" || peopleInputTextField.Text.StartsWith("0"))
+            else if (people == "0" || people.StartsWith("0"))
             {
                 var alert = UIAlertController.Create("Wystąpił błąd!", "Musi być przynajmniej 1 osoba w aucie", UIAlertControllerStyle.Alert);
                 alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
                 PresentViewController(alert, true, null);
             }
-            //else if ()
-            //{
-            //    var alert = UIAlertController.Create("Wystąpił błąd!", "Dystans musi wynosić conajmniej 1 km", UIAlertControllerStyle.Alert);
-            //    alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-            //    PresentViewController(alert, true, null);
-            //}
-            /*
-             
-            >>  << 
-
-             */
-            else // >> refactor <<
+            else if (double.Parse(distance) < 1.0)
             {
-                string ppl = peopleInputTextField.Text;
-                string d = distanceInputTextField.Text.Replace('.', ',');
-                string m = milageInputTextField.Text.Replace('.', ',');
-                string fc = fuelCostInputTextField.Text.Replace('.', ',');
-                string avgw = weightPeopleInputTextField.Text.Replace('.', ',');
+                var alert = UIAlertController.Create("Wystąpił błąd!", "Dystans musi wynosić conajmniej 1km", UIAlertControllerStyle.Alert);
+                alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                PresentViewController(alert, true, null);
+            }
+            else if (double.Parse(milage100) < 1.0)
+            {
+                var alert = UIAlertController.Create("Wystąpił błąd!", "Spalanie musi wynosić conajmniej 1l/100km", UIAlertControllerStyle.Alert);
+                alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                PresentViewController(alert, true, null);
+            }
+            else if (double.Parse(fuelCost) < 1.0)
+            {
+                var alert = UIAlertController.Create("Wystąpił błąd!", "Cena paliwa powinna być powyżej 0", UIAlertControllerStyle.Alert);
+                alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                PresentViewController(alert, true, null);
+            }
+            else if (double.Parse(avgW) < 1.0)
+            {
+                var alert = UIAlertController.Create("Wystąpił błąd!", "Średnia waga 1 osoby powinna być większa niż 1 kg", UIAlertControllerStyle.Alert);
+                alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                PresentViewController(alert, true, null);
+            }
+            else 
+            {
+                peopleInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                peopleInputTextField.Layer.CornerRadius = 4;
+                peopleInputTextField.Layer.BorderWidth = 1f;
 
-                double fullCost = CalculateWholeCost(ppl, d, m, fc, avgw); // invoking method example
+                distanceInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                distanceInputTextField.Layer.CornerRadius = 4;
+                distanceInputTextField.Layer.BorderWidth = 1f;
+
+                milageInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                milageInputTextField.Layer.CornerRadius = 4;
+                milageInputTextField.Layer.BorderWidth = 1f;
+
+                fuelCostInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                fuelCostInputTextField.Layer.CornerRadius = 4;
+                fuelCostInputTextField.Layer.BorderWidth = 1f;
+
+                weightPeopleInputTextField.Layer.BorderColor = UIColor.White.CGColor;
+                weightPeopleInputTextField.Layer.CornerRadius = 4;
+                weightPeopleInputTextField.Layer.BorderWidth = 1f;
+
+                double fullCost = CalculateWholeCost(people, distance, milage100, fuelCost, avgW);
                 printResultLabel1.Text = fullCost.ToString("C2");
                 costWithWeightLabel.Text = "całkowity koszt podróży";
 
-                double sharedCost = ShareCostWith(fullCost, ppl);
+                double sharedCost = ShareCostWith(fullCost, people);
                 printResultLabel2.Text = sharedCost.ToString("C2");
                 costWithoutWeightLabel.Text = "TWOJA ZRZUTKA";
             }
         }
 
-        private double CalculateWholeCost(string _people, string _distance, string _milage, string _fuelCost, string _avgWeight) // example >> refactor it soon
+        private double CalculateWholeCost(string _people, string _distance, string _milage, string _fuelCost, string _avgWeight)
         {
             int ppl = int.Parse(_people);
-            double d = double.Parse(_distance);
-            double m = double.Parse(_milage); // średnie spalanie paliwa
-            double fc = double.Parse(_fuelCost);
-            double avgw = double.Parse(_avgWeight);
+            double dist = double.Parse(_distance);
+            double mil100 = double.Parse(_milage); 
+            double fuelc = double.Parse(_fuelCost);
+            double avgwght = double.Parse(_avgWeight);
 
-            double additionalMilage = (avgw * ppl * 0.6) / 100;
-            double csspzudc = m + additionalMilage;
-            double wholeTripCost = csspzudc * fc;
+            double additionalMilage = (avgwght * ppl * 0.6) / 100;
+            double milageVal = (dist * mil100) / 100;
+            double milageScaler = AdditionalMilageScaler(additionalMilage, dist);
+            double csspzudc = milageVal + milageScaler;
+            double wholeTripCost = csspzudc * fuelc;           
 
             return wholeTripCost;
         }
 
-        private double ShareCostWith(double whTripCost, string _people) => whTripCost / int.Parse(_people);
+        private double AdditionalMilageScaler(double _additionalMillage, double _distance) => (_additionalMillage * _distance) / 100;
+
+        private double ShareCostWith(double _whTripCost, string _people) => _whTripCost / int.Parse(_people);
 
         public override void DidReceiveMemoryWarning() => base.DidReceiveMemoryWarning();
-        // Release any cached data, images, etc that aren't in use.
 
         public override void ViewWillAppear(bool animated)
         {
