@@ -225,6 +225,11 @@ namespace Nawache
             }
         }
 
+        partial void clearButton(UIButton sender)
+        {
+            peopleInputTextField.Text = "";
+        }
+
         private double CalculateWholeCost(string _people, string _distance, string _milage, string _fuelCost, string _avgWeight)
         {
             int ppl = int.Parse(_people);
