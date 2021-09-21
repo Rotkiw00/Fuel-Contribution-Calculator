@@ -21,6 +21,7 @@ The project is the first one I have developed and pushed on GitHub 🔥. This si
 - Xamarin.iOS 
 - Interface builder
 - Objective-C
+- C#
 
 ## Features
 
