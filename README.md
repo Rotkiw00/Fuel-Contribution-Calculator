@@ -36,6 +36,7 @@ To do in the future:
 - "Share" button to directly send a text message about whip-round back
 
 ## Screenshots
+![Example screenshot](./app_views.png)
 
 ## Acknowledgements 
 - This project was inspired by https://kalkulator-paliwa.pl 
