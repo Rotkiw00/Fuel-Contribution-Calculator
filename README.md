@@ -10,12 +10,14 @@ The project is the first one I have developed and pushed on GitHub 🔥. This si
 * [General Information](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
+* [Screenshots](#screenshots)
 * [Acknowledgements](#acknowledgements)
 
 ## General information
 - Calculating estimated full cost of the car trip
 - Possibility of sharing estimated cost between other people within the car (whip-round)
 - Application layout was build for iPhone 12 iOS 14.5
+- The language used in this modest application is Polish
 
 ## Technologies Used
 - Xamarin.iOS 
@@ -24,5 +26,16 @@ The project is the first one I have developed and pushed on GitHub 🔥. This si
 - C#
 
 ## Features
+List the ready (for now) features:
+- Placeholders in every input text field inform what user should write in
+- Info buttons next to each label show (after click) some specific info about input text 
+- "Generating results" button prints counted results
+- "Clean" button cleans inputted values
+
+To do in the future:
+- "Share" button to directly send a text message about whip-round back
+
+## Screenshots
 
 ## Acknowledgements 
+- This project was inspired by https://kalkulator-paliwa.pl 
