@@ -10,7 +10,7 @@ The project is the first one I have developed and pushed on GitHub 🔥. This si
 * [General Information](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
-* [Screenshots](#screenshots)
+* [Screenshots](#sample-screenshots)
 * [Acknowledgements](#acknowledgements)
 
 ## General information
@@ -35,7 +35,7 @@ List the ready (for now) features:
 To do in the future:
 - "Share" button to directly send a text message about whip-round back
 
-## Screenshots
+## Sample screenshots
 ![Example screenshot](./app_views.png)
 
 ## Acknowledgements 
