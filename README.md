@@ -1,4 +1,4 @@
-# Xamarin.iOS project called "Zrzuta na WACHE"
+# Fuel-Contribution-Calculator made in Xamarin.iOS in C#"
 The project is the first one I have developed and pushed on GitHub 🔥. This simple app makes it possible for people to calculate the cost of traveling by car based on: 
 - how many people are in the car,
 - distance,
